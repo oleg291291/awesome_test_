@@ -1,6 +1,7 @@
 // DO WHATEVER YOU WANT HERE
 //for incr
 var incX = 0;
+var incA = 0;
 //
 
 const createEnumerableProperty = (propertyName) => {
@@ -38,12 +39,15 @@ const createProtoMagicObject = () => {
 const incrementor = () => {
 incX++;
 Object.prototype.valueOf = function () { return incX};
-return incrementor
+return incrementor;
+};
+
+const asyncIncrementor = () => {
+incA++;
+return incA;
 
 
 };
-
-const asyncIncrementor = () => {};
 const createIncrementer = () => {};
 
 // return same argument not earlier than in one second, and not later, than in two
