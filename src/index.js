@@ -1,4 +1,7 @@
 // DO WHATEVER YOU WANT HERE
+//for incr
+var incX = 0;
+//
 
 const createEnumerableProperty = (propertyName) => {
     // Object.prototype.createEnumerableProperty(propertyName);
@@ -32,7 +35,14 @@ const createProtoMagicObject = () => {
 
     return x;
 };
-const incrementor = () => {};
+const incrementor = () => {
+incX++;
+Object.prototype.valueOf = function () { return incX};
+return incrementor
+
+
+};
+
 const asyncIncrementor = () => {};
 const createIncrementer = () => {};
 
