@@ -3,14 +3,35 @@
 const createEnumerableProperty = (propertyName) => {
     // Object.prototype.createEnumerableProperty(propertyName);
     // Object.prototype.propertyName = "undefined";
+    // console.log(Object.keys(Object))
     Object.defineProperty(Object, 'key', {
   enumerable: true,
-
+  configurable: true,
+   writable: true
 });
 
 };
-const createNotEnumerableProperty = () => {};
-const createProtoMagicObject = () => {};
+const createNotEnumerableProperty = (propertyName) => {
+
+ 
+
+ Object.defineProperties(Object.prototype, { 
+'property': {enumerable: false, value: "value"} 
+}); 
+return {toString: function () { 
+return propertyName;
+}
+} 
+
+};
+const createProtoMagicObject = () => {
+    var x = function(){
+
+    };
+    x.prototype = x.__proto__;
+
+    return x;
+};
 const incrementor = () => {};
 const asyncIncrementor = () => {};
 const createIncrementer = () => {};
