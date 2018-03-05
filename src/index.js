@@ -1,6 +1,14 @@
 // DO WHATEVER YOU WANT HERE
 
-const createEnumerableProperty = () => {};
+const createEnumerableProperty = (propertyName) => {
+    // Object.prototype.createEnumerableProperty(propertyName);
+    // Object.prototype.propertyName = "undefined";
+    Object.defineProperty(Object, 'key', {
+  enumerable: true,
+
+});
+
+};
 const createNotEnumerableProperty = () => {};
 const createProtoMagicObject = () => {};
 const incrementor = () => {};
