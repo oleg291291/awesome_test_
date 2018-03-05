@@ -48,7 +48,18 @@ return incA;
 
 
 };
-const createIncrementer = () => {};
+const createIncrementer = () => {
+this.value = 0;
+
+    this.next = function(){
+        this.value++
+        
+        return this
+
+    }
+    
+return this
+};
 
 // return same argument not earlier than in one second, and not later, than in two
 const returnBackInSecond = () => {};
