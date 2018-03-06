@@ -49,16 +49,27 @@ return incA;
 
 };
 const createIncrementer = () => {
-this.value = 0;
 
-    this.next = function(){
-        this.value++
-        
-        return this
+// var index = 1;
+//    return {
+//        next: function(){
+           
+//            console.log(index);
+//            return {value: index++, done: false};
+//        }
+//     };
 
-    }
+Object.prototype[Symbol.iterator] = createIncrementer;
+
+var index = 1;
     
-return this
+    return {
+      next: function () {
+        return { value: index++, done: false };
+      }
+    };
+ 
+
 };
 
 // return same argument not earlier than in one second, and not later, than in two
