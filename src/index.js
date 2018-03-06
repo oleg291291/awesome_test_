@@ -57,7 +57,32 @@ Object.prototype[Symbol.iterator] = createIncrementer;
 };
 
 // return same argument not earlier than in one second, and not later, than in two
-const returnBackInSecond = () => {};
+const returnBackInSecond = (param) => {
+
+this.param = param;
+// setTimeout(function() { return param }, 1000);
+// var returnedValue = param;
+// const startT = Date.now();
+
+
+    
+
+ return new Promise(function(resolve, reject) {
+     
+// const currentT = Date.now();
+// const deltaT = currentT - startT;
+// console.log(currentT);
+setTimeout(function() { resolve(param); }, 1000);
+// resolve(param);
+
+
+ 
+ //reject(console.log('reject!'))
+
+    
+  });
+
+};
 const getDeepPropertiesCount = () => {};
 const createSerializedObject = () => {};
 const toBuffer = () => {};
