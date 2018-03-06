@@ -2,12 +2,9 @@
 //for incr
 var incX = 0;
 var incA = 0;
-//
+var incF = 1;
 
 const createEnumerableProperty = (propertyName) => {
-    // Object.prototype.createEnumerableProperty(propertyName);
-    // Object.prototype.propertyName = "undefined";
-    // console.log(Object.keys(Object))
     Object.defineProperty(Object, 'key', {
   enumerable: true,
   configurable: true,
@@ -49,27 +46,14 @@ return incA;
 
 };
 const createIncrementer = () => {
-
-// var index = 1;
-//    return {
-//        next: function(){
-           
-//            console.log(index);
-//            return {value: index++, done: false};
-//        }
-//     };
-
+ 
 Object.prototype[Symbol.iterator] = createIncrementer;
 
-var index = 1;
-    
     return {
       next: function () {
-        return { value: index++, done: false };
+        return { value: incF++, done: false };
       }
     };
- 
-
 };
 
 // return same argument not earlier than in one second, and not later, than in two
