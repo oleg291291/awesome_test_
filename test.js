@@ -102,12 +102,9 @@ describe(('You are awesome, aren\'t you?'), () => {
     let intervalId = setInterval(() => {
       const currentTime = Date.now();
       const delta = currentTime - startTime;
-      console.log(check)
-      console.log(param)
       if (check === param) {
         clearInterval(intervalId);
         if (delta < 1000 || delta > 1500) {
-          console.log('too soon?')
           assert.equal(true, false);
         } else {
           assert.equal(true, true);
@@ -115,7 +112,6 @@ describe(('You are awesome, aren\'t you?'), () => {
         done();
       } else {
         if (delta > 1500) {
-          console.log('delta > 1500!')
           assert.equal(true, false);
           clearInterval(intervalId);
           done();
