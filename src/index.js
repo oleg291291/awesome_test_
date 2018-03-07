@@ -67,7 +67,14 @@ setTimeout(function() { resolve(param); }, 1000);
 
   });
 };
-const getDeepPropertiesCount = () => {};
+const getDeepPropertiesCount = (obj) => {
+
+var strObj = JSON.stringify(obj)
+var strMatch = strObj.match(/}/g);
+// console.log(strMatch.length - 1);
+return strMatch.length - 1
+
+};
 const createSerializedObject = () => {};
 const toBuffer = () => {};
 const sortByProto = () => {};
