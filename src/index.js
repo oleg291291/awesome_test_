@@ -75,7 +75,9 @@ var strMatch = strObj.match(/}/g);
 return strMatch.length - 1
 
 };
-const createSerializedObject = () => {};
+const createSerializedObject = () => {
+return null
+};
 const toBuffer = () => {};
 const sortByProto = () => {};
 
