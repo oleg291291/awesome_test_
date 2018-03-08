@@ -71,7 +71,6 @@ const getDeepPropertiesCount = (obj) => {
 
 var strObj = JSON.stringify(obj)
 var strMatch = strObj.match(/}/g);
-// console.log(strMatch.length - 1);
 return strMatch.length - 1
 
 };
@@ -85,67 +84,44 @@ for(var step = 0; step < 4; step++){
 
 if(arr[step].__proto__ === null){
   arr[step].value = 9
-  console.log('proto - null')
 }
 else
 if(arr[step].__proto__.__proto__ === null){
   arr[step].value = 8
-  console.log('proto,proto - null')
 }
 else
 if(arr[step].__proto__.__proto__.__proto__ === null){
   arr[step].value = 7
-  console.log('proto,proto,proto - null')
 }
 else
 if(arr[step].__proto__.__proto__.__proto__.__proto__ === null){
   arr[step].value = 6
-  console.log('proto,proto,proto,proto - null')
 }
 else
 if(arr[step].__proto__.__proto__.__proto__.__proto__.__proto__ === null){
   arr[step].value = 5
-  console.log('proto,proto,proto,proto,proto - null')
 }
 else
 if(arr[step].__proto__.__proto__.__proto__.__proto__.__proto__.__proto__ === null){
   arr[step].value = 4
-  console.log('proto,proto,proto,proto,proto,proto - null')
 }
 else
 if(arr[step].__proto__.__proto__.__proto__.__proto__.__proto__.__proto__.__proto__ === null){
   arr[step].value = 3
-  console.log('proto,proto,proto,proto,proto,proto,proto - null')
 }
 else
 if(arr[step].__proto__.__proto__.__proto__.__proto__.__proto__.__proto__.__proto__.__proto__ === null){
   arr[step].value = 2
-  console.log('proto,proto,proto,proto,proto,proto,proto,proto - null')
 }
 else
 if(arr[step].__proto__.__proto__.__proto__.__proto__.__proto__.__proto__.__proto__.__proto__.__proto__ === null){
   arr[step].value = 1
-  console.log('proto,proto,proto,proto,proto,proto,proto,proto,proto - null')
 }
-
 }
-console.log(arr[0].value)
-console.log(arr[1].value)
-console.log(arr[2].value)
-console.log(arr[3].value)
-
-
 function compareChar(char1, char2) {
   return char1.value - char2.value;
 }
-
 var sorted = arr.sort(compareChar);
-
-console.log(arr[0].value)
-console.log(arr[1].value)
-console.log(arr[2].value)
-console.log(arr[3].value)
-
 return sorted;
 
 };
